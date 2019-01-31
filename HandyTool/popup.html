@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tool Box</title>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/popup.js"></script>
+	<style type="text/css">
+		body{font-size: 15px;}
+		ul,li{padding: 0px; margin: 0px; display: block;}
+		ul.container{width: 270px; margin: 4px;}
+		.container li{ height: 30px; }
+		#error_result{color: red;}
+		#timestamp{width: 200px;}
+		span#error_result{word-break:normal; width:auto; display:block; white-space:pre-wrap; word-wrap : break-word ; overflow: hidden ; }
+	</style>
+</head>
+<body>
+	<ul class="container">
+		<li>
+			<span>当前日期：<span id="date_str"></span></span>
+		</li>
+		<li>
+			<span>当前时间戳：<span id="timestamp"></span></span>
+		</li>
+		<li>
+			<span>
+			<input type="text" name="process_str" value="" id="process_str" />
+			</span>
+		</li>
+		<li>
+			<span>
+			<input type="button" name="md5_btn" value="md5加密" id="md5_btn" />
+			</span>
+			<span>
+			<input type="button" name="date_convert_btn" value="时间转换" id="date_convert_btn" />
+			</span>
+		</li>
+		<li>
+			<span>
+			<input type="button" name="url_encode_btn" value="URL加密" id="url_encode_btn" />
+			</span>
+			<span>
+			<input type="button" name="url_decode_btn" value="URL解密" id="url_decode_btn" />
+			</span>
+		</li>	
+		<li>
+			<span id="error_result"></span>
+			<span id="tip"></span>
+			<br>
+		</li>	
+	</ul>
+
+</body>
+</html>

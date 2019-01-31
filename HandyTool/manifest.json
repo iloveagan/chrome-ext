@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "Handy Tool",
+    "description": "This extension provides the usual tools for programmers.",
+    "version": "1.0",
+    "permissions": [
+        "tabs"
+    ],
+    "icons": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_popup": "popup.html",
+        "48": "img/icon.png"
+    },
+    "content_scripts": 
+    [
+        {	
+        	// change the site address as your own web.
+            "matches": ["http://localhost/index.html"],
+            // "<all_urls>" 表示匹配所有地址
+            //"matches": ["<all_urls>"],
+            // 多个JS按顺序注入
+            "js": ["js/jquery-3.3.1.min.js", "js/content-script.js"],
+            // JS的注入可以随便一点，但是CSS的注意就要千万小心了，因为一不小心就可能影响全局样式
+            //"css": ["css/custom.css"],
+            // 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    }
+    // "page_action": {
+    //     "default_icon": {
+    //         "19": "xxx_19.png",
+    //         "38": "xxx_38.png"
+    //     },
+    //     "default_title": "xxx.com article information"
+    // }
+}
